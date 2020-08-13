@@ -13,6 +13,7 @@ Link do curso: https://www.udemy.com/course/mean-primeira-aplicacao-do-zero/
    - Para mais instruções: https://www.hostinger.com.br/tutoriais/instalar-mongodb-ubuntu
    - Verifique se as configurações do mongo estão de acordo com o que foi implementado aqui em backend > config > database.js (caso esteja diferente, deixei aqui exemplo de como as informações precisam estar posicionadas para o banco funcionar com o backend)
 
+
    > mongoose.connect('mongodb://username:password@host:port/database');
 
 4. Entrar na pasta backend:
@@ -39,7 +40,7 @@ npm run dev
 Local:   http://localhost:3000/
 ```
 
-    - O backend está configurado para iniciar na **porta 3000**, caso precise mudar a porta entre em backend > config > server.js e mude a constante _port_
+   - O backend está configurado para iniciar na **porta 3000**, caso precise mudar a porta entre em backend > config > server.js e mude a constante _port_
 
 ### Tecnologias Utilizadas
 

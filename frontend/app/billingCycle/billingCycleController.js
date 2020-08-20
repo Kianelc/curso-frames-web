@@ -1,9 +1,10 @@
 (function() {
     angular.module("primeiroApp").controller("BillingCycleCtrl", [
         "$http",
-        BillingCycleController
-    ])
-    function BillingCycleController($http) {
+        "msgs",
+        BillingCycleController,
+    ]);
+    function BillingCycleController($http, msgs) {
         const vm = this;
 
         vm.create = function() {
@@ -11,8 +12,10 @@
 
             $http.post(url, vm.billingCycle).then((response) => {
                 vm.billingCycle = {};
-                console.log("Sucesso!");
-            })
+                msgs.addSuccess("Operação realizada com sucesso!");
+            }).catch((data) => {
+                msgs.addError(data.data.errors);
+            });
         }
     }
 })()

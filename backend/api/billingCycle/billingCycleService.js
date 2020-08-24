@@ -26,7 +26,7 @@ function parseErrors(nodeRestfulErrors) {
 // paginação
 BillingCycle.route("count", (req, res, next) => {
   // consulta banco de dados
-  BillingCycle.count((error, value) => {
+  BillingCycle.countDocuments((error, value) => {
     if (error) {
       res.status(404).json({ errors: [error] });
     } else {

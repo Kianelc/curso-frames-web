@@ -12,14 +12,14 @@
 
         vm.refresh = function() {
             const page = parseInt($location.search().page) || 1;
-            $http.get(`${url}?skip=${(page - 1) * 10}&limit=10`).then(response => {
+            $http.get(`${url}?skip=${(page - 1) * 5}&limit=5`).then(response => {
                 vm.billingCycle = {credits: [{}], debts:[{}]};
                 vm.billingCycles = response;
                 vm.calculateValue();
-                tabs.show(vm, {tabList: true, tabCreate: true});
-
+                
                 $http.get(`${url}/count`).then((response) => {
-                    vm.pages = Math.ceil(response.data.value / 10);
+                    vm.pages = Math.ceil(response.data.value / 5);
+                    tabs.show(vm, {tabList: true, tabCreate: true});
                 });
             });
         }
